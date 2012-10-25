@@ -7,3 +7,9 @@ case, the title of the articles) to the screen. Two
 BBC News RSS documents are included for use as
 examples.
 
+As specified by the assignment brief, RSS documents
+must be fed into the program using the redirect
+operator on the command line.
+
+e.g. '$ ./readrss < rssfile.xml'
+
