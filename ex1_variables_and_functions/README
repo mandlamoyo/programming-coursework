@@ -1,0 +1,30 @@
+Programming Exercise One: Variables and Functions
+
+This is a computer program which performs some
+simple calculations and prints the results to
+screen.
+
+As program input has not been covered in class,
+the values are hard-coded into the program, as
+per the assignment requirements.
+
+Problem 1:- Volume of a Sphere
+	Calculates the volume of a sphere, using
+	the equation:
+		'V = 4/3 * pi * radius^3'
+
+Problem 2:- Smallest Money
+	Converts a monetary value (specified in
+	pounds) into its largest note and coin
+	constituents.
+
+Problem 3:- Adding Times
+	Two times are added together:
+		
+		1) The initial time, specified in
+	24 hour clock format.
+
+		2) A time duration, specified in
+	a similar way (ie 345 = 3 hours, 45 mins)
+
+
