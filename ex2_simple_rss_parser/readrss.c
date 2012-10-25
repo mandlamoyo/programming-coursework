@@ -1,3 +1,8 @@
+/* Programming Exercise Two: Simple RSS Parser
+*	Mandla Moyo
+*
+* Reads and extracts the titles from an RSS document */
+
 #include <stdio.h>
 
 #define TRUE 1
