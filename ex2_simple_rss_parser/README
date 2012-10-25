@@ -1,0 +1,9 @@
+Programming Coursework 2: Simple RSS Parser
+
+This program implements a computer program which
+reads an RSS document, looks for specific elements,
+and prints out only certain information (in this
+case, the title of the articles) to the screen. Two
+BBC News RSS documents are included for use as
+examples.
+
