@@ -1,5 +1,5 @@
-/* G51PRG Exercise One: Variables and Functions
-*	Mandla Moyo - mxm12u - 4102907
+/* Programming Exercise One: Variables and Functions
+*	Mandla Moyo
 *
 *	Consists of three parts:
 *		1) Prints out the volumes of four spheres
