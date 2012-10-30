@@ -58,7 +58,7 @@ double exponentOf( double base, int exp )
 {
 	int i, result = 0;
 	
-	for( i = 0; i < exp; i++ ) result += base;
+	for( i = 0; i < exp; i++ ) result *= base;
 	return result;
 }
 
@@ -101,7 +101,7 @@ int addTimes( int start, int duration )
 
 	int mins;
 
-	mins = getMins( start ) + duration;
+	mins = getMins( start ) + getMins( duration );
 	return getHours( mins );
 }
 
