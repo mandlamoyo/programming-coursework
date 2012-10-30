@@ -34,7 +34,7 @@ int main( int argc, char **args )
 			titleCount = 0;
 		}
 
-		// If tag start, begin checking for 'title' tag
+		// If at tag start, begin checking for 'title' tag
 		if( c == '<' ) {
 			if( printingOut ) {
 				putchar('\n');
