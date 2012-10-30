@@ -5,54 +5,46 @@
 
 #include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-
+#define IDLE 0 
+#define PRINTING 1
+#define CHECKING_TITLE 2 
 
 int main( int argc, char **args )
 {
-	int c, titleCount = 0;
-	int isTitle = FALSE, printingOut = FALSE, checkingTitle = FALSE;
+	int c, state=IDLE, titleCount = 0;
 	char tag[] = "title";
 	
 	while(( c = getchar() ) != -1 ) {
-		
-		/* Title checking procedure; matches getchar() 
-			position to characters in 'title' */
-		if( checkingTitle ) {
-			if( c == tag[titleCount] ) {
-				titleCount++;
-			} else {
-				titleCount = 0;
-				checkingTitle = FALSE;
-			}
+	
+		switch( state )
+		{
+			case PRINTING:
+				if( c == '<' ) {	
+					putchar('\n');
+					state=IDLE;
+				} else {
+					putchar( c );
+				}
+				break;
+
+			case CHECKING_TITLE:
+				/* Match getchar() character
+				to characters in 'title' */
+				
+				if( c == tag[titleCount] ) {
+					titleCount++;
+				} else {
+					if( titleCount == 5 ) state=PRINTING;
+					else state=IDLE;
+					titleCount = 0;
+				}
+				break;
+
+			case IDLE:
+				if( c == '<' ) state = CHECKING_TITLE;
+				break;
 		}
-
-		if( titleCount == 5 ) {
-			checkingTitle = FALSE;
-			isTitle = TRUE;
-			titleCount = 0;
-		}
-
-		// If at tag start, begin checking for 'title' tag
-		if( c == '<' ) {
-			if( printingOut ) {
-				putchar('\n');
-				printingOut = FALSE;
-			} else {
-				checkingTitle = TRUE;
-			}
-		}
-
-		// Actual character printing
-		if( printingOut ) putchar(c); 
-		
-		// Check for control characters
-		if( c == '>' && isTitle ) printingOut = TRUE;
-		if( c == '/' && isTitle ) isTitle = FALSE;
-
 	}
-
 	return 0;
 }
 
